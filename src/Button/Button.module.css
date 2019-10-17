@@ -1,0 +1,77 @@
+.button{
+    width: 72px;
+    height: 72px;
+    border: solid 0.5px rgb(65, 171, 252);
+    border-radius: 32px;
+    background-color: rgb(12, 73, 142);
+    font-size: 23px;
+    color: rgb(66, 218, 231);
+    outline: none;
+    transition: all 0.4s ease-in;
+    position: relative;
+    
+}
+.button:before {
+    content: '';
+    background-color: rgb(167, 195, 242);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale(0.001, 0.001);
+}
+.button:focus:before {
+    animation: effect_dylan 0.8s ease-out;
+    
+}
+@keyframes effect_dylan {
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}
+
+
+
+.button:hover{
+    cursor: pointer;
+}
+
+
+
+.clear{
+    width: 112.5px;
+    background-color:  rgb(8, 45, 104);
+    color: white;
+
+}
+
+.zero{
+    width: 150px;
+}
+
+.operator{
+    background-color: rgb(226, 38, 123);
+    border: none;
+    font-size: 30px;
+    color: white;
+    padding-bottom: 7px;
+}
+
+.decimal{
+    font-weight: bold;
+}
+
+
+  
+  
