@@ -14,8 +14,8 @@ class Calculator extends Component {
             output: '0',
         }
     }
-    
-    
+
+
 
     handleClick = (event) => {
         const value = event.target.value;
@@ -25,29 +25,29 @@ class Calculator extends Component {
         const beforeLastInputDigit = this.state.input[this.state.input.length - 2];
         const operatorArray = ["+", "-", "*", "/"];
         const changeState = () => {
-            this.setState(prevState => ({ input: prevState.input += value })) 
+            this.setState(prevState => ({ input: prevState.input += value }))
         }
 
-       
+
 
         switch (value) {
             case '=': {
                 //preventing evaluation of output with empty or 1 number input
-                if (inputArray.length === 0 || inputArray.length === 1){
+                if (inputArray.length === 0 || inputArray.length === 1) {
                     break;
                 }
                 // preventing evaluation of output after previous input of "+" "-" "/" "*"
-                else if (operatorArray.includes(lastInputDigit)){
+                else if (operatorArray.includes(lastInputDigit)) {
                     break;
                 }
                 // preventing division by 0
-                else if (lastInputDigit === "0" && beforeLastInputDigit === "/"){
+                else if (lastInputDigit === "0" && beforeLastInputDigit === "/") {
                     break;
                 }
                 //evaluating output
                 else {
                     const output = parseFloat(eval(this.state.input).toFixed(5)).toString();
-                    this.setState({ output: output });    
+                    this.setState({ output: output });
                 }
                 break;
             }
@@ -57,7 +57,7 @@ class Calculator extends Component {
             }
             case 'Delete': {
                 //preventing using DELETE on empty input
-                if (this.state.output === '0' && this.state.input === ''){
+                if (this.state.output === '0' && this.state.input === '') {
                     break;
                 }
 
@@ -103,7 +103,7 @@ class Calculator extends Component {
                 }
                 break;
             }
-            
+
 
             default: {
                 changeState();
@@ -120,9 +120,6 @@ class Calculator extends Component {
                     <ButtonContainer handleClick={this.handleClick} />
                 </div>
                 <p className={classes.paragraph}>Coded by Iryna Malankava</p>
-                <p className={classes.paragraph}>Inspired by <a className={classes.anchor} 
-                    href="https://dribbble.com/shots/2354920-Calculator-Day19-My-Free-UI-UX-SketchApp-Training">Dribbble</a></p>
-
             </div>
 
         )
